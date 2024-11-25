@@ -460,4 +460,16 @@
     }
 }
 
+@media only screen and (max-width: 480px) {
+    .card-row-inner {
+        gap: 10px;
 
+    }
+    .box-title h3 {
+        font-size: 16px;
+    }
+
+    .new-price {
+        font-size: 14px;
+    }
+}
