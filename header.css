@@ -576,3 +576,36 @@ footer {
 .next-news {
     right: 10px;
 }
+
+@media only screen and (max-width: 480px) {
+    .review {
+        min-width: 200px;
+        max-width: 200px;
+        background: white;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+        text-align: left;
+    }
+    
+    .review h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .review p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    
+    .review .rating {
+        color: #ffcc00;
+        margin-bottom: 5px;
+    }
+    
+    .review .date {
+        font-size: 12px;
+        color: gray;
+    }
+}

@@ -475,11 +475,11 @@ main {
 
 @media only screen and (max-width: 480px) {
     .main-info-section {
-        padding: 20px; /* Уменьшаем внешние отступы секции */
+        padding: 10px; /* Уменьшаем внешние отступы секции */
     }
 
     .main-info-headers h1 {
-        font-size: 24px; /* Ещё меньше заголовки */
+        font-size: 20px; /* Ещё меньше заголовки */
     }
 
     .main-info-headers p {
@@ -500,11 +500,11 @@ main {
     }
 
     .side-info-title {
-        font-size: 18px; /* Уменьшаем заголовки */
+        font-size: 14px; /* Уменьшаем заголовки */
     }
 
     .side-info-description {
-        font-size: 14px; /* Уменьшаем описание */
+        font-size: 12px; /* Уменьшаем описание */
     }
 }
 
@@ -551,13 +551,21 @@ main {
 }
 
 @media only screen and (max-width: 480px) {
+    .online-credit {
+        padding: 10px 20px;
+    }
+
+    .car-matching-container {
+        padding: 10px;
+    }
+
     .car-matching-cardBig {
         padding: 10px; /* Минимальные отступы */
         flex-direction: column; /* Столбец для удобства на маленьких экранах */
     }
 
     .car-matching-cardBig dt {
-        font-size: 20px; /* Ещё меньше заголовок */
+        font-size: 14px; /* Ещё меньше заголовок */
     }
 
     .car-matching-cardBig dd {
@@ -569,6 +577,7 @@ main {
     }
 
     .car-matching-cardBig .logos img {
-        height: 40px; /* Ещё меньше логотипы */
+        height: 35px; /* Ещё меньше логотипы */
     }
+
 }

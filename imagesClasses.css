@@ -444,4 +444,20 @@
     background-color: #0056b3;
 }
 
+@media only screen and (max-width:480px) {
+    .chatInputContainer .sendButton {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .chatInputContainer .sendButton:hover {
+        background-color: #0056b3;
+    }
+}
+
 
