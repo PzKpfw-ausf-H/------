@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосалон DriveZone</title>
+    <link rel="icon" type="image/png" href="images/DriveZoneIcon.png">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="imagesClasses.css">
+    <link rel="stylesheet" href="manufacturerSelector.css">
+    <link rel="stylesheet" href="adaptViewFlexHeader.css">
+    <link rel="stylesheet" href="adaptGrid.css">
+
+    <!-- <script src="funtions.js" defer></script> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Podkova:wght@400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <div class="lower_header">
+            <div class="Logo">
+                <h1>Drive<span class="logo-highlight">Zone</span></h1>
+            </div>
+
+            <div class="navigation">
+                <nav>
+                    <ul>
+                        <li><a href="about-us.html">О нас</a></li>
+                        <li><a href="catalog.html" class="catalog-btn">Каталог автомобилей</a></li>
+                        <li><a>Автомобили с пробегом</a></li>
+                        <li><a>Спецпредложения</a></li>
+                        <li><a href="services.html">Услуги клиентам</a></li>
+                        <li><a href="#contact">Наши контакты</a></li>
+                        <li><a href="registration.html" class="register-btn">Войти</a></li> <!-- Новая кнопка регистрации -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        
+        <div class="dropdown" id="dropdownMenu">
+            <ul class="nav-links">
+                <li><a href="#about" onclick="closeDropdown()">О нас</a></li>
+                <li><a href="#vehicles" onclick="closeDropdown()">Каталог автомобилей</a></li>
+                <li><a href="#" onclick="closeDropdown()">Автомобили с пробегом</a></li>
+                <li><a href="#" onclick="closeDropdown()">Спецпредложения</a></li>
+                <li><a href="#services" onclick="closeDropdown()">Услуги клиентам</a></li>
+                <li><a href="#contact" onclick="closeDropdown()">Наши контакты</a></li>
+            </ul>
+        </div>
+
+        <button class="toggle-menu" onclick="toggleDropdown()">☰</button>
+        <script>
+            function toggleDropdown() {
+                const dropdown = document.getElementById('dropdownMenu');
+                dropdown.classList.toggle('show'); // Добавляем/удаляем класс "show" для управления видимостью
+            }
+        
+            function closeDropdown() {
+                const dropdown = document.getElementById('dropdownMenu');
+                dropdown.classList.remove('show'); // Удаляем класс "show", чтобы закрыть меню
+            }
+        </script>
+
+    </header>
+
+    <main> <!--Основной блок сайта-->
+
+        <section class="hero-slider">
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="images/backgroundSlide/slide1.webp" alt="Слайд 1">
+                    <div class="slide-content">
+                        <h2>Лучшие автомобили 2023 года</h2>
+                        <p>Выберите автомобиль своей мечты прямо сейчас.</p>
+                        <button>Узнать больше</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/backgroundSlide/slide2.webp" alt="Слайд 2">
+                    <div class="slide-content">
+                        <h2>Гарантия качества и надежности</h2>
+                        <p>Покупайте автомобили с гарантией от автосалона.</p>
+                        <button>Посмотреть каталог</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/backgroundSlide/slide3.webp" alt="Слайд 3">
+                    <div class="slide-content">
+                        <h2>Лучшая цена на рынке</h2>
+                        <p>Получите скидку до 20% на популярные модели.</p>
+                        <button>Акции и предложения</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="chatBotIcon" id="chatBotIcon">
+            <img src="images/chat_bubble.png" alt="chatBubble" onclick="toggleChatWindow()">
+        </div>
+        
+        <div class="chatWindow" id="chatWindow">
+            <h2>Чат с менеджером</h2>
+            <div id="chatContent" class="chatContent">
+                <!-- Сообщения будут добавляться здесь -->
+            </div>
+            <div class="chatInputContainer">
+                <input type="text" id="textInfo" placeholder="Напишите сообщение..." />
+                <button class="sendButton" onclick="sendMessage()">Отправить</button>
+            </div>
+            <img src="images/close_button.png" alt="closeButton" onclick="closeChatWindow()" style="cursor: pointer;" class="closeButton">
+        </div>
+        <section class="latest-arrivals">
+            <h2>Последние поступления</h2>
+            <div class="arrivals-grid">
+                <!-- Карточка автомобиля -->
+                <div class="car-card">
+                    <img src="images/latest/GeelyMonjaro.png" alt="Geely Monjaro">
+                    <h3>Geely Monjaro</h3>
+                    <p>Цена: <strong>1 565 910 ₽</strong></p>
+                    <p>В кредит от: <strong>29 365 ₽/мес.</strong></p>
+                </div>
+        
+                <div class="car-card">
+                    <img src="images/latest/GeelyCoolray.png" alt="Geely Coolray">
+                    <h3>Geely Coolray</h3>
+                    <p>Цена: <strong>2 050 910 ₽</strong></p>
+                    <p>В кредит от: <strong>35 626 ₽/мес.</strong></p>
+                </div>
+
+                <div class="car-card">
+                    <img src="images/latest/cadillacEscalade.png" alt="Cadillac Escalade">
+                    <h3>Cadillac Escalade</h3>
+                    <p>Цена: <strong>19 100 000 ₽</strong></p>
+                    <p>В кредит от: <strong>80 000 ₽/мес.</strong></p>
+                </div>
+
+                <div class="car-card">
+                    <img src="images/latest/dodgeChallenger.png" alt="Dodge Challenger">
+                    <h3>Dodge Challenger</h3>
+                    <p>Цена: <strong>5 400 000 ₽</strong></p>
+                    <p>В кредит от: <strong>50 000 ₽/мес.</strong></p>
+                </div>
+
+                <div class="car-card">
+                    <img src="images/latest/MazdaCX5.png" alt="Mazda CX 5">
+                    <h3>Mazda CX 5</h3>
+                    <p>Цена: <strong>3 990 000 ₽</strong></p>
+                    <p>В кредит от: <strong>39 200 ₽/мес.</strong></p>
+                </div>
+
+                <div class="car-card">
+                    <img src="images/latest/HavalDARGOX.jpg" alt="Haval DARGO X">
+                    <h3>Haval DARGO X</h3>
+                    <p>Цена: <strong>4 900 000 ₽</strong></p>
+                    <p>В кредит от: <strong>41 200 ₽/мес.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2>Отзывы клиентов</h2>
+            <div class="reviews-container">
+                <button class="reviews-nav prev-btn">❮</button>
+                <div class="reviews-slider">
+                    <div class="review">
+                        <h3>Руслан Белов</h3>
+                        <p>Знаток города 24 уровня</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="date">23 ноября 2024 года</p>
+                        <p>Прохожу тут плановые ТО. Все хорошо.</p>
+                    </div>
+                    <div class="review">
+                        <h3>Татьяна Косырева</h3>
+                        <p>Знаток города 10 уровня</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="date">23 ноября 2024 года</p>
+                        <p>Отличный сервис, отзывчивые сотрудники, рекомендую!</p>
+                    </div>
+                    <div class="review">
+                        <h3>Константин К.</h3>
+                        <p>Знаток города 3 уровня</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="date">22 ноября 2024 года</p>
+                        <p>Был на диагностике автомобиля перед летним сезоном. Очень доволен.</p>
+                    </div>
+                </div>
+                <button class="reviews-nav next-btn">❯</button>
+            </div>
+            <a href="#" class="all-reviews-link">Читать все отзывы</a>
+        </section>
+
+        <section class="accessories">
+            <h2>Аксессуары</h2>
+            <div class="accessories-card-container">
+                <div class="accessory-card">
+                    <div class="accessory-card-header">Шины и диски</div>
+                    <div class="accessory-card-content">
+                        <img src="images/tiresAccessory.png" alt="tiresAccessory">
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-card-header">Шины и диски</div>
+                    <div class="accessory-card-content">
+                        <img src="images/tiresAccessory.png" alt="tiresAccessory">
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-card-header">Шины и диски</div>
+                    <div class="accessory-card-content">
+                        <img src="images/tiresAccessory.png" alt="tiresAccessory">
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-card-header">Шины и диски</div>
+                    <div class="accessory-card-content">
+                        <img src="images/tiresAccessory.png" alt="tiresAccessory">
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-card-header">Шины и диски</div>
+                    <div class="accessory-card-content">
+                        <img src="images/tiresAccessory.png" alt="tiresAccessory">
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-card-header">Шины и диски</div>
+                    <div class="accessory-card-content">
+                        <img src="images/tiresAccessory.png" alt="tiresAccessory">
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-card-header">Шины и диски</div>
+                    <div class="accessory-card-content">
+                        <img src="images/tiresAccessory.png" alt="tiresAccessory">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <h2>Новости</h2>
+            <div class="news-container">
+                <button class="news-nav prev-news">❮</button>
+                <div class="news-slider">
+                    <div class="news-item">
+                        <img src="images/news/news1.png" alt="Новость 1">
+                        <div class="news-content">
+                            <h3>Toyota отзывает в РФ 22,7 тыс. седанов Avensis</h3>
+                            <p>
+                                Москва. 1 марта. INTERFAX.RU - Российское подразделение японского автоконцерна Toyota отзывает в рамках...
+                            </p>
+                            <button class="read-more">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img src="images/news/news2.png" alt="Новость 2">
+                        <div class="news-content">
+                            <h3>Компания Kia показала электрокар EV9</h3>
+                            <p>
+                                Корейский автопроизводитель Kia продемонстрировал серийную версию электромобиля EV9, практически не...
+                            </p>
+                            <button class="read-more">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img src="images/news/news3.png" alt="Новость 3">
+                        <div class="news-content">
+                            <h3>АВТОВАЗ не будет повышать цены на автомобили в 2024 году</h3>
+                            <p>
+                                Ряд СМИ сообщил о повышении цен на автомобили бренда LADA, однако АВТОВАЗ эту информацию опроверг. Предприятие не планирует...
+                            </p>
+                            <button class="read-more">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img src="images/news/news4.png" alt="Новость 4">
+                        <div class="news-content">
+                            <h3>JAC выведет на российский рынок автомобили локальной сборки в 2025 году</h3>
+                            <p>
+                                Китайский автопроизводитель JAC анонсировал новинки, которые появятся на рынке...
+                            </p>
+                            <button class="read-more">Читать далее</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="news-nav next-news">❯</button>
+            </div>
+        </section>
+        
+
+        <h2>Мы на карте</h2>
+        <iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=55.732363, 37.642193&amp;q=Shlyuzovaya Naberezhnaya, 2/1, корпус 1, Moscow, Russia, 115114&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="googleMap"></iframe><br />
+    </main>
+
+    <footer>
+        <div class="social">
+            <h3>Соц сети</h3>
+            <div class="social-button-container">
+                <div class="social-button instagram">
+                    <img src="images/socials/instagram.png" alt="Instagram">
+                </div>
+                <div class="social-button telegram">
+                    <img src="images/socials/telegram.png" alt="Telegram">
+                </div>
+                <div class="social-button youtube">
+                    <img src="images/socials/youtube.png" alt="YouTube">
+                </div>
+            </div>
+        </div>
+        <section id="contact">
+            <h3>Контакты</h3>
+            <div class="number">
+                <span>Телефон (с 09:00 до 18:00): </span>
+                <a href="tel:8-499-500-97-97">8-499-500-97-97</a>
+            </div>
+            <div class="email">
+                <span>Почта (круглосуточно): </span>
+                <a href="mailto:texthere@gmail.com">texthere@gmail.com</a>
+            </div>
+        </section>
+    </footer>
+    
+
+    <div id="captchaModal" class="modal">
+        <div class="modal-content">
+            <h3>Проверка безопасности</h3>
+            <p id="captchaPrompt"></p>
+            <input type="text" id="captchaInput" placeholder="Введите ответ">
+            <button id="captchaSubmit">Подтвердить</button>
+            <button id="captchaCancel">Отмена</button>
+            <p id="captchaError" style="color: red; display: none;">Неверный ответ. Попробуйте еще раз.</p>
+        </div>
+    </div>
+
+    <script src="funtions.js"></script>
+</body>
+</html>

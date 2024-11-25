@@ -1,0 +1,131 @@
+/* Переменные для настройки цветов и эффектов */
+:root {
+    --background-color: rgba(255, 255, 255, 0.15);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --animation-duration: 5s;
+}
+
+/* Стиль для фона */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #100838 0%, #4d0303 100%);
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Квадраты с анимацией */
+.small-square {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    animation: moveSquare var(--animation-duration) infinite alternate;
+    transition: transform 0.5s;
+    z-index: -1;
+}
+
+.square1 { top: 10%; left: 15%; animation-duration: calc(var(--animation-duration) + 2s); }
+.square2 { top: 50%; left: 70%; animation-duration: calc(var(--animation-duration) + 3s); }
+.square3 { top: 80%; left: 30%; animation-duration: var(--animation-duration); }
+
+/* Анимация случайного перемещения */
+@keyframes moveSquare {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(calc(50px - 100% * 0.5), calc(50px - 100% * 0.5)) rotate(20deg); }
+}
+
+/* Форма регистрации */
+.registration-form {
+    position: relative;
+    padding: 2rem;
+    width: 320px;
+    margin: 0 auto; /* Центрируем форму на странице */
+    backdrop-filter: blur(10px) brightness(1.2);
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 var(--box-shadow-color);
+    text-align: center;
+    gap: 5px;
+}
+
+.registration-form h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.registration-form label {
+    color: #f0f0f0;
+    font-size: 14px;
+    display: block;
+    margin: 0 auto 5px auto;
+    text-align: left;
+    width: 90%;
+}
+
+.registration-form input {
+    width: 90%;
+    padding: 10px;
+    margin: 0.5rem auto;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.registration-form input:focus {
+    outline: none;
+    border-color: #89f7fe;
+}
+
+.registration-form button {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #9e2121;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 auto 10px;
+}
+
+.registration-form button:hover {
+    background-color: #ff6363;
+}
+
+.return-btn {
+    display: inline-block;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #cccccc;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 0 auto;
+}
+
+.return-btn:hover {
+    background-color: #aaaaaa;
+}

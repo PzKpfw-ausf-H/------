@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосалон DriveZone</title>
+    <link rel="icon" type="image/png" href="images/DriveZoneIcon.png">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="imagesClasses.css">
+    <link rel="stylesheet" href="manufacturerSelector.css">
+    <link rel="stylesheet" href="adaptViewFlexHeader.css">
+    <link rel="stylesheet" href="adaptGrid.css">
+    <link rel="stylesheet" href="buy-car.css">
+    
+    <script src="funtions.js" defer></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Podkova:wght@400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="toolbar">
+
+        </div>
+        <div class="lower_header">
+            <div class="Logo">
+                <h1>Drive<span class="logo-highlight">Zone</span></h1>
+            </div>
+
+            <div class="navigation">
+                <nav>
+                    <ul>
+                        <li><a href="about-us.html">О нас</a></li>
+                        <li><a href="catalog.html" class="catalog-btn">Каталог автомобилей</a></li>
+                        <li><a>Автомобили с пробегом</a></li>
+                        <li><a>Спецпредложения</a></li>
+                        <li><a href="services.html">Услуги клиентам</a></li>
+                        <li><a href="#contact">Наши контакты</a></li>
+                        <li><a href="registration.html" class="register-btn">Войти</a></li> <!-- Новая кнопка регистрации -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        
+        <div class="dropdown" id="dropdownMenu">
+            <ul class="nav-links">
+                <li><a href="#about" onclick="closeDropdown()">О нас</a></li>
+                <li><a href="#vehicles" onclick="closeDropdown()">Каталог автомобилей</a></li>
+                <li><a href="#" onclick="closeDropdown()">Автомобили с пробегом</a></li>
+                <li><a href="#" onclick="closeDropdown()">Спецпредложения</a></li>
+                <li><a href="#services" onclick="closeDropdown()">Услуги клиентам</a></li>
+                <li><a href="#contact" onclick="closeDropdown()">Наши контакты</a></li>
+            </ul>
+        </div>
+
+        <button class="toggle-menu" onclick="toggleDropdown()">☰</button>
+        <script>
+            function toggleDropdown() {
+                const dropdown = document.getElementById('dropdownMenu');
+                dropdown.classList.toggle('show'); // Добавляем/удаляем класс "show" для управления видимостью
+            }
+        
+            function closeDropdown() {
+                const dropdown = document.getElementById('dropdownMenu');
+                dropdown.classList.remove('show'); // Удаляем класс "show", чтобы закрыть меню
+            }
+        </script>
+
+    </header>
+    <main class="container">
+        <section class="car-details">
+            <div class="car-images">
+                <img src="images/cars-catalog/cadillac-ctsV.png" alt="cadillac-ctsV">
+            </div>
+            <div class="car-info">
+                <h2>3 500 000 ₽</h2>
+                <p>Кредит от 50 000 ₽/мес.</p>
+                <button class="btn">Купить онлайн</button>
+                <button class="btn">Trade-in</button>
+                <button class="btn">Получить одобрение</button>
+                <ul class="car-specs">
+                    <li><strong>Марка:</strong> Cadillac</li>
+                    <li><strong>Модель:</strong> CTS V</li>
+                    <li><strong>Год:</strong> 2020</li>
+                    <li><strong>Пробег:</strong> 50км</li>
+                    <li><strong>Кузов:</strong> Седан</li>
+                    <li><strong>Цвет:</strong> Красный</li>
+                    <li><strong>Двигатель:</strong> Бензин</li>
+                    <li><strong>Объем:</strong> 2.0 л</li>
+                    <li><strong>Мощность:</strong> 197 л.с.</li>
+                    <li><strong>КПП:</strong> Автомат</li>
+                    <li><strong>Привод:</strong> Полный</li>
+                </ul>
+            </div>
+        </section>
+        <section class="car-description">
+            <h3>Описание</h3>
+            <p>Автомобиль в отличном состоянии, без ДТП, один владелец. Полный комплект документов, сервисная книжка. Возможна покупка в кредит, обмен по программе Trade-in.</p>
+        </section>
+        <section class="car-features">
+            <h3>Комплектация</h3>
+            <ul>
+                <li>Антиблокировочная система (ABS)</li>
+                <li>Круиз-контроль</li>
+                <li>Камера заднего вида</li>
+                <li>Климат-контроль</li>
+                <li>Подогрев сидений</li>
+                <li>Система доступа без ключа</li>
+                <li>Электропривод зеркал</li>
+                <li>Легкосплавные диски</li>
+            </ul>
+        </section>
+
+        <section class="online-credit">
+            <h3>Рассчитать кредит</h3>
+            <div class="credit-container">
+                <div class="credit-sliders">
+                    <div class="slider-group">
+                        <label for="loan-amount">Сумма кредита:</label>
+                        <input type="range" id="loan-amount" min="100000" max="5000000" step="100000" value="1000000">
+                        <div class="slider-values">
+                            <span>100 000 ₽</span>
+                            <span>5 000 000 ₽</span>
+                        </div>
+                        <div class="slider-current-value" id="loan-amount-value">1 000 000 ₽</div>
+                    </div>
+                    <div class="slider-group">
+                        <label for="loan-term">Срок кредита (мес.):</label>
+                        <input type="range" id="loan-term" min="12" max="84" step="12" value="36">
+                        <div class="slider-values">
+                            <span>12 мес.</span>
+                            <span>84 мес.</span>
+                        </div>
+                        <div class="slider-current-value" id="loan-term-value">36 месяцев</div>
+                    </div>
+                    <div class="slider-group">
+                        <label for="down-payment">Первоначальный взнос:</label>
+                        <input type="range" id="down-payment" min="0" max="2000000" step="100000" value="500000">
+                        <div class="slider-values">
+                            <span>0 ₽</span>
+                            <span>2 000 000 ₽</span>
+                        </div>
+                        <div class="slider-current-value" id="down-payment-value">500 000 ₽</div>
+                    </div>
+                </div>
+                <div class="credit-summary">
+                    <h4>Ваши условия:</h4>
+                    <p>Сумма кредита: <span id="credit-total">500 000 ₽</span></p>
+                    <p>Ежемесячный платеж: <span id="monthly-payment">15 000 ₽</span></p>
+                    <button class="calculate-btn">Оставить заявку</button>
+                </div>
+            </div>
+        </section>
+        
+        
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Автосалон. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,338 @@
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width:768px) and (max-width: 1023px) {
+    header {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 10px;
+        overflow: hidden;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .Logo {
+        margin-right: auto;
+    }
+
+    .manufacturer_selector {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+
+        justify-items: center;
+
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .toggle-menu {
+        display: block; /* Добавляем это */
+        cursor: pointer;
+        color: white;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+    }
+
+    .nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .dropdown {
+        display: none;
+        background-color: #444;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 200px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .dropdown.show {
+        display: block;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 15px;
+    }
+
+    .pickByParameters {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+
+    .searchCarByParameters {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+    .accessories-card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        gap: 25px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (max-width:768px) and (min-width:481px) {
+    .navigation {
+        display: none; /* Скрываем навигацию на мобильных устройствах */
+    }
+
+    .toggle-menu {
+        display: block; /* Кнопка меню видима */
+        cursor: pointer;
+        color: white;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+    }
+
+    .dropdown {
+        display: none; /* Скрываем выпадающее меню по умолчанию */
+        background-color: #444;
+        position: absolute;
+        top: 50px;
+        width: 180px;
+        border-radius: 5px;
+        z-index: 1000;
+        right: 0;
+    }
+
+    .dropdown.show {
+        display: block; /* Показываем меню, когда добавлен класс "show" */
+    }
+
+    .nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links li {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px; /* Уменьшаем шрифт для компактности */
+    }
+
+}
+
+@media only screen and (min-width: 359px) and (max-width: 480px) {
+    header {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .Logo {
+        margin-right: auto;
+        font-size: 20px; /* Уменьшаем размер логотипа для мобильных устройств */
+    }
+    
+    .navigation {
+        display: none; /* Скрываем навигацию на мобильных устройствах */
+    }
+
+    .toggle-menu {
+        display: block; /* Кнопка меню видима */
+        cursor: pointer;
+        color: white;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+    }
+
+    .manufacturer_selector {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Три колонки для более удобного расположения элементов */
+        gap: 8px;
+        justify-items: center;
+    }
+
+    .dropdown {
+        display: none; /* Скрываем выпадающее меню по умолчанию */
+        background-color: #444;
+        position: absolute;
+        top: 50px;
+        width: 180px;
+        border-radius: 5px;
+        z-index: 1000;
+        right: 0;
+    }
+
+    .dropdown.show {
+        display: block; /* Показываем меню, когда добавлен класс "show" */
+    }
+
+    .nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links li {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px; /* Уменьшаем шрифт для компактности */
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 15px;
+    }
+
+    .pickByParameters {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+
+    .searchCarByParameters {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 10px;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: start;
+        box-sizing: border-box;
+    }
+
+    .social {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 5px;
+    }
+
+    .social-button-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    #contact {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+    .accessories-card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        gap: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .dropdown {
+        display: none !important;
+    }
+    .toggle-menu {
+        display: none !important;
+    }
+
+    .accessories-card-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto auto;
+        gap: 25px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .accessories-card-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto auto;
+        gap: 25px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    .accessories-card-container {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: auto;
+        gap: 25px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (min-width: 481) and (max-width: 767px) {
+    .accessories-card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto auto;
+        gap: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1340px) {
+    .navigation nav ul {
+        gap: 0px; /* Уменьшаем расстояние между элементами */
+    }
+
+    nav a {
+        font-size: 14px; /* Уменьшаем шрифт */
+        padding: 15px 3px; /* Уменьшаем отступы */
+    }
+}

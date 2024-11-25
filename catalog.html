@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосалон DriveZone</title>
+    <link rel="icon" type="image/png" href="images/DriveZoneIcon.png">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="imagesClasses.css">
+    <link rel="stylesheet" href="manufacturerSelector.css">
+    <link rel="stylesheet" href="adaptViewFlexHeader.css">
+    <link rel="stylesheet" href="adaptGrid.css">
+
+    <script src="funtions.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Podkova:wght@400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <div class="toolbar">
+
+        </div>
+        <div class="lower_header">
+            <div class="Logo">
+                <h1>Drive<span class="logo-highlight">Zone</span></h1>
+            </div>
+
+            <div class="navigation">
+                <nav>
+                    <ul>
+                        <li><a href="DriveZone.html">Главная</a></li>
+                        <li><a href="about-us.html">О нас</a></li>
+                        <li><a>Автомобили с пробегом</a></li>
+                        <li><a>Спецпредложения</a></li>
+                        <li><a href="services.html">Услуги клиентам</a></li>
+                        <li><a href="#contact">Наши контакты</a></li>
+                        <li><a href="registration.html" class="register-btn">Войти</a></li> <!-- Новая кнопка регистрации -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        
+        <div class="dropdown" id="dropdownMenu">
+            <ul class="nav-links">
+                <li><a href="#about" onclick="closeDropdown()">О нас</a></li>
+                <li><a href="#vehicles" onclick="closeDropdown()">Каталог автомобилей</a></li>
+                <li><a href="#" onclick="closeDropdown()">Автомобили с пробегом</a></li>
+                <li><a href="#" onclick="closeDropdown()">Спецпредложения</a></li>
+                <li><a href="#services" onclick="closeDropdown()">Услуги клиентам</a></li>
+                <li><a href="#contact" onclick="closeDropdown()">Наши контакты</a></li>
+            </ul>
+        </div>
+
+        <button class="toggle-menu" onclick="toggleDropdown()">☰</button>
+        <script>
+            function toggleDropdown() {
+                const dropdown = document.getElementById('dropdownMenu');
+                dropdown.classList.toggle('show'); // Добавляем/удаляем класс "show" для управления видимостью
+            }
+        
+            function closeDropdown() {
+                const dropdown = document.getElementById('dropdownMenu');
+                dropdown.classList.remove('show'); // Удаляем класс "show", чтобы закрыть меню
+            }
+        </script>
+
+    </header>
+    <main>
+        <article id="vehicles"> <!--Блок с моделями автомобилей-->
+            <h2>Автомобили в продаже</h2>
+            <div class="manufacturer_selector"> 
+                <div class="manufacturer_button"> 
+                    <img src="images/loop-list-icons/icons8-bmw-144.png" alt="BWM-logo"> 
+                    <span>BMW</span> 
+                </div> 
+                <div class="manufacturer_button"> 
+                    <img src="images/loop-list-icons/icons8-cadillac-144.png" alt="Cadillac-logo"> 
+                    <span>Cadillac</span> 
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-chevrolet-144.png" alt="Chevrolet-logo">
+                    <span>Chevrolet</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-ford-144.png" alt="Ford-logo">
+                    <span>Ford</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-gmc-144.png" alt="GMC-logo">
+                    <span>GMC</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-suzuki-144.png" alt="Suzuki-logo">
+                    <span>Suzuki</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-роллс-ройс-144.png" alt="R&R-logo">
+                    <span>Rolls Royce</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-фольксваген-144.png" alt="Volkswagen-logo">
+                    <span>Volkswagen</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-hyundai-144.png" alt="Hyundai-logo">
+                    <span>Hyundai</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-maserati-144.png" alt="Maserati-logo">
+                    <span>Maserati</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-toyota-144.png" alt="Toyota-logo">
+                    <span>Toyota</span>
+                </div>
+                <div class="manufacturer_button">
+                    <img src="images/loop-list-icons/icons8-bentley-144.png" alt="Bentley-logo">
+                    <span>Bentley</span>
+                </div>
+            </div>
+
+            <!-- <div class="pickByParameters">
+                <div class="introducingText">
+                    <h2>Подбор авто по параметрам</h2>
+                    Если не нашли нужный авто на главной странице, можно подобрать по параметрам.
+                    Широкий выбор параметров позволит вам найти подходящую модель быстро и удобно.
+                    Спасибо, что выбираете нас.
+                </div>
+                <div class="searchCarByParameters">
+                    <form class="YearMilageBodytype">
+                        <div class="yearsSelector">
+                            <select name="minYear" id="minYear-select">
+                                <option value="">Мин год</option>
+                                <option value="2010">2010г</option>
+                                <option value="2011">2011г</option>
+                                <option value="2012">2012г</option>
+                                <option value="2013">2013г</option>
+                            </select>
+                            <select name="maxYear" id="maxYear-select">
+                                <option value="">Макс год</option>
+                                <option value="2020">2020г</option>
+                                <option value="2021">2021г</option>
+                                <option value="2022">2022г</option>
+                                <option value="2023">2023г</option>
+                            </select>
+                        </div>
+
+                        <select name="milage" id="milage-select">
+                            <option value="">Пробег</option>
+                            <option value="50000">до 50000км</option>
+                            <option value="100000">до 100000км</option>
+                            <option value="150000">до 150000км</option>
+                        </select>
+                        
+                        <select name="bodyType" id="bodyType-select">
+                            <option value="">Тип кузова</option>
+                            <option value="sedan">Седан</option>
+                            <option value="suv">Универсал</option>
+                            <option value="pickup">Пикап</option>
+                            <option value="hatchback">Хэтчбек</option>
+                        </select>
+                    </form>
+                    <form class="transmissionPrice">
+                        <div class="priceSelectors">
+                            <input type="text" id="minPrice" placeholder="Цена от">
+                            <input type="text" id="maxPrice" placeholder="Цена до">
+                        </div>
+
+                        <select name="transmission" id="transmission-select">
+                            <option value="">Тип трансмиссии</option>
+                            <option value="mechanical">Механическая</option>
+                            <option value="automatic">Автоматическая</option>
+                            <option value="robot">Робот</option>
+                            <option value="variator">Вариатор</option>
+                        </select>
+                    </form>
+                </div>
+            </div> -->
+
+            <div class="cards-wrapper">
+                <div class="card-row" data-brand="Cadillac">
+                    <div class="card-row-inner">
+                        <div class="col-first">
+                            <a class="box-images" href="#">
+                                <div class="box-gallery">
+                                    <img src="images/cars-catalog/cadillac-ctsV.png" alt="cadillac-ctsV" class="car-image">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-second">
+                            <div class="box-title">
+                                <h3><a href="#">Cadillac-CTS V</a></h3>
+                            </div>
+                            <div class="box-propetry">
+                                <div><span>Год</span><span>2017</span></div>
+                                <div><span>КПП</span><span>Робот</span></div>
+                                <div><span>Двигатель</span><span>2.0 л</span></div>
+                                <div><span>Привод</span><span>Полный</span></div>
+                                <div><span>Цвет</span><span>Красный</span></div>
+                            </div>
+                        </div>
+                        <div class="col-third">
+                            <div class="row-price">
+                                <span class="old-price">4 550 000 ₽</span>
+                                <span class="new-price">3 700 000 ₽</span>
+                            </div>
+                            <div class="dif-btns">
+                                <button class="purchase-btn">Купить</button>
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i> В избранное
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-row" data-brand="BMW">
+                    <div class="card-row-inner">
+                        <div class="col-first">
+                            <a class="box-images" href="#">
+                                <div class="box-gallery">
+                                    <img src="images/cars-catalog/bmw-m5.png" alt="bmw-m5" class="car-image">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-second">
+                            <div class="box-title">
+                                <h3><a href="#">BMW M5</a></h3>
+                            </div>
+                            <div class="box-propetry">
+                                <div><span>Год</span><span>2021</span></div>
+                                <div><span>КПП</span><span>Робот</span></div>
+                                <div><span>Двигатель</span><span>2.0 л</span></div>
+                                <div><span>Привод</span><span>Полный</span></div>
+                                <div><span>Цвет</span><span>Голубой</span></div>
+                            </div>
+                        </div>
+                        <div class="col-third">
+                            <div class="row-price">
+                                <span class="old-price">9 870 000 ₽</span>
+                                <span class="new-price">9 545 000 ₽</span>
+                            </div>
+                            <div class="dif-btns">
+                                <button class="purchase-btn">Купить</button>
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i> В избранное
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-row" data-brand="Chevrolet">
+                    <div class="card-row-inner">
+                        <div class="col-first">
+                            <a class="box-images" href="#">
+                                <div class="box-gallery">
+                                    <img src="images/cars-catalog/chevrolet-tahoe.png" alt="chevrolet-tahoe" class="car-image">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-second">
+                            <div class="box-title">
+                                <h3><a href="#">Chevrolet Tahoe</a></h3>
+                            </div>
+                            <div class="box-propetry">
+                                <div><span>Год</span><span>2020</span></div>
+                                <div><span>КПП</span><span>Робот</span></div>
+                                <div><span>Двигатель</span><span>2.0 л</span></div>
+                                <div><span>Привод</span><span>Полный</span></div>
+                                <div><span>Цвет</span><span>Коричневый</span></div>
+                            </div>
+                        </div>
+                        <div class="col-third">
+                            <div class="row-price">
+                                <span class="old-price">15 100 000 ₽</span>
+                                <span class="new-price">14 700 000 ₽</span>
+                            </div>
+                            <div class="dif-btns">
+                                <button class="purchase-btn">Купить</button>
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i> В избранное
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-row" data-brand="GMC">
+                    <div class="card-row-inner">
+                        <div class="col-first">
+                            <a class="box-images" href="#">
+                                <div class="box-gallery">
+                                    <img src="images/cars-catalog/gmc-yukon.webp" alt="gmc-yukon" class="car-image">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-second">
+                            <div class="box-title">
+                                <h3><a href="#">GMC Yukon</a></h3>
+                            </div>
+                            <div class="box-propetry">
+                                <div><span>Год</span><span>2022</span></div>
+                                <div><span>КПП</span><span>Робот</span></div>
+                                <div><span>Двигатель</span><span>2.0 л</span></div>
+                                <div><span>Привод</span><span>Полный</span></div>
+                                <div><span>Цвет</span><span>Черный</span></div>
+                            </div>
+                        </div>
+                        <div class="col-third">
+                            <div class="row-price">
+                                <span class="old-price">16 250 000 ₽</span>
+                                <span class="new-price">15 875 000 ₽</span>
+                            </div>
+                            <div class="dif-btns">
+                                <button class="purchase-btn">Купить</button>
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i> В избранное
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-row" data-brand="Ford">
+                    <div class="card-row-inner">
+                        <div class="col-first">
+                            <a class="box-images" href="#">
+                                <div class="box-gallery">
+                                    <img src="images/cars-catalog/ford-mustang.png" alt="ford-mustang" class="car-image">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-second">
+                            <div class="box-title">
+                                <h3><a href="#">Ford Mustang</a></h3>
+                            </div>
+                            <div class="box-propetry">
+                                <div><span>Год</span><span>2024</span></div>
+                                <div><span>КПП</span><span>Робот</span></div>
+                                <div><span>Двигатель</span><span>2.0 л</span></div>
+                                <div><span>Привод</span><span>Полный</span></div>
+                                <div><span>Цвет</span><span>Синий</span></div>
+                            </div>
+                        </div>
+                        <div class="col-third">
+                            <div class="row-price">
+                                <span class="old-price">13 250 000 ₽</span>
+                                <span class="new-price">12 875 000 ₽</span>
+                            </div>
+                            <div class="dif-btns">
+                                <button class="purchase-btn">Купить</button>
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i> В избранное
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-row" data-brand="Suzuki">
+                    <div class="card-row-inner">
+                        <div class="col-first">
+                            <a class="box-images" href="#">
+                                <div class="box-gallery">
+                                    <img src="images/cars-catalog/suzuki-s-cross.png" alt="suzuki-s-cross" class="car-image">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-second">
+                            <div class="box-title">
+                                <h3><a href="#">Suzuki S-Cross</a></h3>
+                            </div>
+                            <div class="box-propetry">
+                                <div><span>Год</span><span>2021</span></div>
+                                <div><span>КПП</span><span>Робот</span></div>
+                                <div><span>Двигатель</span><span>2.0 л</span></div>
+                                <div><span>Привод</span><span>Полный</span></div>
+                                <div><span>Цвет</span><span>Тёмно-серый</span></div>
+                            </div>
+                        </div>
+                        <div class="col-third">
+                            <div class="row-price">
+                                <span class="old-price">7 750 000 ₽</span>
+                                <span class="new-price">7 000 000 ₽</span>
+                            </div>
+                            <div class="dif-btns">
+                                <button class="purchase-btn">Купить</button>
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i> В избранное
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="social">
+                <h3>Соц сети</h3>
+                <div class="social-button-container">
+                    <div class="social-button instagram">
+                        <img src="images/socials/instagram.png" alt="Instagram">
+                    </div>
+                    <div class="social-button telegram">
+                        <img src="images/socials/telegram.png" alt="Telegram">
+                    </div>
+                    <div class="social-button youtube">
+                        <img src="images/socials/youtube.png" alt="YouTube">
+                    </div>
+                </div>
+            </div>
+            <section id="contact">
+                <h3>Контакты</h3>
+                <div class="number">
+                    <span>Телефон (с 09:00 до 18:00): </span>
+                    <a href="tel:8-499-500-97-97">8-499-500-97-97</a>
+                </div>
+                <div class="email">
+                    <span>Почта (круглосуточно): </span>
+                    <a href="mailto:texthere@gmail.com">texthere@gmail.com</a>
+                </div>
+            </section>
+        </footer>
+    </main>
+
+
+    <div id="captchaModal" class="modal">
+        <div class="modal-content">
+            <h3>Проверка безопасности</h3>
+            <p id="captchaPrompt"></p>
+            <input type="text" id="captchaInput" placeholder="Введите ответ">
+            <button id="captchaSubmit">Подтвердить</button>
+            <button id="captchaCancel">Отмена</button>
+            <p id="captchaError" style="color: red; display: none;">Неверный ответ. Попробуйте еще раз.</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

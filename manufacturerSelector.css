@@ -1,0 +1,125 @@
+.manufacturer_selector {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 1000px;
+}
+
+.manufacturer_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 150px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s; 
+}
+
+.manufacturer_button img {
+    max-width: 60px; 
+    max-height: 60px;
+    margin-bottom: 10px;
+}
+
+.manufacturer_button span {
+    font-size: 14px; 
+    color: #333;
+    text-align: center;
+}
+
+.manufacturer_button:hover {
+    background-color: #007bff;
+    color: white; 
+    transform: scale(1.05);
+}
+
+/*Подбор авто по параметрам*/
+
+.pickByParameters {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+
+}
+
+.searchCarByParameters {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/*Блок с текстом для параметров*/
+.introducingText {
+    
+    border: 0px solid #000;
+    padding: 10px;
+    max-width: 600px; 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+} 
+
+/*Первая часть параметров*/
+.YearMilageBodytype {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.YearMilageBodytype select {
+    width: 205px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.yearsSelector {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.yearsSelector select {
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*Вторая часть параметров*/
+
+.transmissionPrice {
+    display: flex;
+    flex-direction: column;
+}
+
+.transmissionPrice select{
+    width: 205px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.priceSelectors {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.priceSelectors input{
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+}
