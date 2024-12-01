@@ -153,8 +153,15 @@ footer {
 
 .social h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 24px;
+    font-family: "Podkova", serif;
     color: white;
+}
+
+#contact h3 {
+    font-size: 24px;
+    font-family: "Podkova", serif;
+    color:white;
 }
 
 .social .social-button-container {
@@ -225,8 +232,13 @@ footer {
     gap: 10px;
 
 }
+.number span {
+    font-family: "Podkova", serif;
+    color: white;
+}
 .number a {
     text-decoration: none;
+    font-family: "Podkova", serif;
     color: aliceblue;
 }
 
@@ -234,8 +246,13 @@ footer {
     padding: 10px;
     gap: 10px;
 }
+.email span {
+    font-family: "Podkova", serif;
+    color: white;
+}
 .email a {
     text-decoration: none;
+    font-family: "Podkova", serif;
     color: aliceblue;
 }
 
@@ -371,12 +388,14 @@ footer {
     font-size: 18px;
     color: #333;
     margin-bottom: 10px;
+    font-family: "Podkova", serif;
 }
 
 .car-card p {
     font-size: 14px;
     color: #555;
     margin: 5px 0;
+    font-family: "Podkova", serif;
 }
 
 .car-card:hover {
@@ -394,6 +413,7 @@ footer {
 .reviews h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    font-family: "Podkova", serif;
 }
 
 .reviews-container {
@@ -425,11 +445,13 @@ footer {
 .review h3 {
     font-size: 18px;
     margin-bottom: 5px;
+    font-family: "Podkova", serif;
 }
 
 .review p {
     font-size: 14px;
     margin: 5px 0;
+    font-family: "Podkova", serif;
 }
 
 .review .rating {
@@ -529,12 +551,14 @@ footer {
 .news-content h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    font-family: "Podkova", serif;
 }
 
 .news-content p {
     font-size: 14px;
     color: #666;
     margin-bottom: 15px;
+    font-family: "Podkova", serif;
 }
 
 .news-content .read-more {

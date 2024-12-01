@@ -123,21 +123,54 @@ function initializeLoopList() {
 function initializeChat() {
     const chatIcon = document.getElementById('chatBotIcon');
     const chatWindow = document.getElementById('chatWindow');
+    const chatContent = document.getElementById('chatContent');
+    const chatInput = document.getElementById('textInfo');
+    const sendButton = document.querySelector('.sendButton');
+    const closeButton = chatWindow.querySelector('.closeButton');
 
-    if (!chatIcon || !chatWindow) {
+    if (!chatIcon || !chatWindow || !chatContent || !chatInput || !sendButton) {
         console.error("Элементы чата не найдены!");
         return;
     }
 
+    // Открыть окно чата
     chatIcon.addEventListener("click", function () {
         chatIcon.style.display = 'none';
         chatWindow.style.display = 'flex';
     });
 
-    const closeButton = chatWindow.querySelector('.closeButton');
+    // Закрыть окно чата
     closeButton.addEventListener("click", function () {
         chatIcon.style.display = 'block';
         chatWindow.style.display = 'none';
+    });
+
+    // Отправка сообщения
+    sendButton.addEventListener("click", function () {
+        const message = chatInput.value.trim();
+        if (message === "") {
+            alert("Введите сообщение перед отправкой.");
+            return;
+        }
+
+        const userMessage = document.createElement("div");
+        userMessage.classList.add("user-message");
+        userMessage.textContent = message;
+        chatContent.appendChild(userMessage);
+
+        // Очистить поле ввода
+        chatInput.value = "";
+
+        // Ответ менеджера (симуляция)
+        setTimeout(() => {
+            const managerMessage = document.createElement("div");
+            managerMessage.classList.add("manager-message");
+            managerMessage.textContent = "Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.";
+            chatContent.appendChild(managerMessage);
+
+            // Автопрокрутка вниз
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }, 1000);
     });
 }
 
