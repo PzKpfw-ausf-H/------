@@ -21,7 +21,12 @@
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s; 
 }
-
+.manufacturer_button.selected {
+    background-color: #0057ff; /* Цвет подсветки для выбранной кнопки */
+    color: white;
+    transform: scale(1.1); /* Легкое увеличение */
+    border-radius: 10px;
+}
 .manufacturer_button img {
     max-width: 60px; 
     max-height: 60px;
@@ -41,85 +46,91 @@
 }
 
 /*Подбор авто по параметрам*/
-
-.pickByParameters {
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 50px;
-
-}
-
-.searchCarByParameters {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    background-color: lightgray;
-    border-radius: 20px;
+/* Секция фильтра */
+.filter-section {
+    background-color: #f9f9f9;
+    border-radius: 10px;
     padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/*Блок с текстом для параметров*/
-.introducingText {
-    
-    border: 0px solid #000;
-    padding: 10px;
-    max-width: 600px; 
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-} 
-
-/*Первая часть параметров*/
-.YearMilageBodytype {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
+/* Заголовок */
+.filter-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.YearMilageBodytype select {
-    width: 205px;
-    height: 40px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.yearsSelector {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.yearsSelector select {
-    width: 100px;
-    height: 40px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/*Вторая часть параметров*/
-
-.transmissionPrice {
+/* Форма */
+.filter-form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
-.transmissionPrice select{
-    width: 205px;
-    height: 40px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.priceSelectors {
+/* Группы полей */
+.filter-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 5px;
 }
 
-.priceSelectors input{
-    width: 90px;
-    height: 35px;
+.filter-group label {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Поля ввода */
+.filter-group input {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+    max-width: 90%; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем внутри контейнера */
+}
+
+/* Кнопка */
+#filter-btn {
+    background-color: #0057ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+    width: 90%; /* Ограничиваем ширину кнопки */
+    max-width: 250px; /* Делаем кнопку аккуратной */
+}
+
+#filter-btn:hover {
+    background-color: #003db3;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .filter-section {
+        width: 95%;
+    }
+
+    .filter-group label {
+        font-size: 14px;
+    }
+
+    .filter-group input {
+        font-size: 13px;
+        padding: 7px 8px;
+    }
+
+    #filter-btn {
+        font-size: 14px;
+    }
 }

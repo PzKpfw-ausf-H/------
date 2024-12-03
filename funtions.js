@@ -121,15 +121,16 @@ function initializeLoopList() {
 
 // Инициализация чата
 function initializeChat() {
-    const chatIcon = document.getElementById('chatBotIcon');
-    const chatWindow = document.getElementById('chatWindow');
-    const chatContent = document.getElementById('chatContent');
-    const chatInput = document.getElementById('textInfo');
-    const sendButton = document.querySelector('.sendButton');
-    const closeButton = chatWindow.querySelector('.closeButton');
+    const chatIcon = document.getElementById('chatBotIcon'); // Получаем элемент с ID "chatBotIcon"
+    const chatWindow = document.getElementById('chatWindow'); // Получаем элемент с ID "chatWindow"
+    const chatContent = document.getElementById('chatContent'); // Получаем элемент с ID "chatContent"
+    const chatInput = document.getElementById('textInfo'); // Получаем элемент с ID "textInfo"
+    const sendButton = document.querySelector('.sendButton'); // Получаем первый соответсвующий "sendbutton"
+    const closeButton = chatWindow.querySelector('.closeButton'); // Получаем первый соответсвующий "closebutton"
 
     if (!chatIcon || !chatWindow || !chatContent || !chatInput || !sendButton) {
-        console.error("Элементы чата не найдены!");
+        console.error("Элементы чата не найдены!");     //обработчик ошибок.
+                                                        //Если не найден элемент на странице - выдаст сообщение в консоли "Элементы чата не найдены!"
         return;
     }
 
@@ -149,7 +150,7 @@ function initializeChat() {
     sendButton.addEventListener("click", function () {
         const message = chatInput.value.trim();
         if (message === "") {
-            alert("Введите сообщение перед отправкой.");
+            alert("Введите сообщение перед отправкой."); //Если ввод пустой - выдаст предупреждение на страничке о том, что необходимо ввести сообщение
             return;
         }
 
@@ -240,11 +241,15 @@ function initializeFilterByBrand() {
     // Находим все карточки автомобилей
     const carCards = document.querySelectorAll(".card-row");
 
+    // Храним выбранные марки в Set (для исключения дублирования)
+    const selectedBrands = new Set();
+
     // Функция для фильтрации
-    function filterCars(brand) {
+    function filterCars() {
         carCards.forEach(card => {
             const carBrand = card.getAttribute("data-brand");
-            if (carBrand === brand || brand === "Все") {
+            // Показываем карточку, если она соответствует одной из выбранных марок
+            if (selectedBrands.has(carBrand) || selectedBrands.size === 0) {
                 card.style.display = "block";
             } else {
                 card.style.display = "none";
@@ -255,10 +260,55 @@ function initializeFilterByBrand() {
     // Добавляем событие клика на каждую кнопку
     manufacturerButtons.forEach(button => {
         button.addEventListener("click", function () {
-            // Получаем марку автомобиля из текста кнопки
             const brand = this.querySelector("span").innerText;
-            filterCars(brand);
+
+            // Если марка уже выбрана, убираем её из списка
+            if (selectedBrands.has(brand)) {
+                selectedBrands.delete(brand);
+                this.classList.remove("selected"); // Убираем подсветку кнопки
+            } else {
+                selectedBrands.add(brand);
+                this.classList.add("selected"); // Подсвечиваем кнопку
+            }
+
+            // Применяем фильтр
+            filterCars();
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const filterForm = document.querySelector(".filter-form");
+    const carCards = document.querySelectorAll(".card-row");
+
+    filterForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Предотвращаем отправку формы
+
+        // Получаем значения из полей формы
+        const engineVolume = parseFloat(document.getElementById("engine-volume").value) || null;
+        const releaseYear = parseInt(document.getElementById("release-year").value) || null;
+        const maxPrice = parseInt(document.getElementById("max-price").value) || null;
+
+        // Фильтрация карточек
+        carCards.forEach((card) => {
+            // Используем data-атрибуты из HTML
+            const carEngine = parseFloat(card.dataset.engine) || 0;
+            const carYear = parseInt(card.dataset.year) || 0;
+            const carPrice = parseInt(card.dataset.price) || 0;
+
+            // Условие для фильтрации (проверяем только введенные параметры)
+            const matchesEngine = engineVolume === null || carEngine >= engineVolume;
+            const matchesYear = releaseYear === null || carYear >= releaseYear;
+            const matchesPrice = maxPrice === null || carPrice <= maxPrice;
+
+            // Отображаем карточку, если она соответствует всем введенным критериям
+            if (matchesEngine && matchesYear && matchesPrice) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+
 

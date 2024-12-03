@@ -136,66 +136,28 @@
                 </div>
             </div>
 
-            <!-- <div class="pickByParameters">
-                <div class="introducingText">
-                    <h2>Подбор авто по параметрам</h2>
-                    Если не нашли нужный авто на главной странице, можно подобрать по параметрам.
-                    Широкий выбор параметров позволит вам найти подходящую модель быстро и удобно.
-                    Спасибо, что выбираете нас.
-                </div>
-                <div class="searchCarByParameters">
-                    <form class="YearMilageBodytype">
-                        <div class="yearsSelector">
-                            <select name="minYear" id="minYear-select">
-                                <option value="">Мин год</option>
-                                <option value="2010">2010г</option>
-                                <option value="2011">2011г</option>
-                                <option value="2012">2012г</option>
-                                <option value="2013">2013г</option>
-                            </select>
-                            <select name="maxYear" id="maxYear-select">
-                                <option value="">Макс год</option>
-                                <option value="2020">2020г</option>
-                                <option value="2021">2021г</option>
-                                <option value="2022">2022г</option>
-                                <option value="2023">2023г</option>
-                            </select>
-                        </div>
-
-                        <select name="milage" id="milage-select">
-                            <option value="">Пробег</option>
-                            <option value="50000">до 50000км</option>
-                            <option value="100000">до 100000км</option>
-                            <option value="150000">до 150000км</option>
-                        </select>
-                        
-                        <select name="bodyType" id="bodyType-select">
-                            <option value="">Тип кузова</option>
-                            <option value="sedan">Седан</option>
-                            <option value="suv">Универсал</option>
-                            <option value="pickup">Пикап</option>
-                            <option value="hatchback">Хэтчбек</option>
-                        </select>
-                    </form>
-                    <form class="transmissionPrice">
-                        <div class="priceSelectors">
-                            <input type="text" id="minPrice" placeholder="Цена от">
-                            <input type="text" id="maxPrice" placeholder="Цена до">
-                        </div>
-
-                        <select name="transmission" id="transmission-select">
-                            <option value="">Тип трансмиссии</option>
-                            <option value="mechanical">Механическая</option>
-                            <option value="automatic">Автоматическая</option>
-                            <option value="robot">Робот</option>
-                            <option value="variator">Вариатор</option>
-                        </select>
-                    </form>
-                </div>
-            </div> -->
+            <section class="filter-section">
+                <h2>Фильтр автомобилей</h2>
+                <form class="filter-form">
+                    <div class="filter-group">
+                        <label for="engine-volume">Объем двигателя (л):</label>
+                        <input type="number" id="engine-volume" placeholder="Например, 2.0">
+                    </div>
+                    <div class="filter-group">
+                        <label for="release-year">Год выпуска:</label>
+                        <input type="number" id="release-year" placeholder="Например, 2020">
+                    </div>
+                    <div class="filter-group">
+                        <label for="max-price">Цена до (₽):</label>
+                        <input type="number" id="max-price" placeholder="Например, 5000000">
+                    </div>
+                    <button type="submit" id="filter-btn">Применить фильтр</button>
+                </form>                
+            </section>
+            
 
             <div class="cards-wrapper">
-                <div class="card-row" data-brand="Cadillac">
+                <div class="card-row" data-brand="Cadillac" data-engine="2.0" data-year="2017" data-price="3700000">
                     <div class="card-row-inner">
                         <div class="col-first">
                             <a class="box-images" href="#">
@@ -226,12 +188,12 @@
                                 <button class="favorite-btn">
                                     <i class="fas fa-heart"></i> В избранное
                                 </button>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card-row" data-brand="BMW">
+                <div class="card-row" data-brand="BMW" data-engine="2.0" data-year="2021" data-price="9545000">
                     <div class="card-row-inner">
                         <div class="col-first">
                             <a class="box-images" href="#">
@@ -267,7 +229,7 @@
                     </div>
                 </div>
 
-                <div class="card-row" data-brand="Chevrolet">
+                <div class="card-row" data-brand="Chevrolet" data-engine="2.0" data-year="2020" data-price="14700000">
                     <div class="card-row-inner">
                         <div class="col-first">
                             <a class="box-images" href="#">
@@ -303,7 +265,7 @@
                     </div>
                 </div>
 
-                <div class="card-row" data-brand="GMC">
+                <div class="card-row" data-brand="GMC" data-engine="2.0" data-year="2022" data-price="15875000">
                     <div class="card-row-inner">
                         <div class="col-first">
                             <a class="box-images" href="#">
@@ -339,7 +301,7 @@
                     </div>
                 </div>
 
-                <div class="card-row" data-brand="Ford">
+                <div class="card-row" data-brand="Ford" data-engine="2.0" data-year="2024" data-price="12875000">
                     <div class="card-row-inner">
                         <div class="col-first">
                             <a class="box-images" href="#">
@@ -375,7 +337,7 @@
                     </div>
                 </div>
 
-                <div class="card-row" data-brand="Suzuki">
+                <div class="card-row" data-brand="Suzuki" data-engine="2.0" data-year="2021" data-price="7000000">
                     <div class="card-row-inner">
                         <div class="col-first">
                             <a class="box-images" href="#">
